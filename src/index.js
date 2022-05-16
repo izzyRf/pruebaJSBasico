@@ -20,3 +20,15 @@ var resultado = division(4, 2);
 function test() {
   console.log(mensaje("juan") + "resultado de la division:\n" + resultado);
 }
+
+fetch("https://pokeapi.co/api/v2/pokemon/")
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    console.log(data.results);
+    //recorrer con foreach
+    data.results.forEach((element) => {
+      console.log(element.name);
+    });
+  });
